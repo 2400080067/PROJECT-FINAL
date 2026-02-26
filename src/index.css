@@ -1,0 +1,99 @@
+/* Global Tailwind CSS imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for mental health platform */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Card styles */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Button styles */
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #8b7fb8;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #6d6392;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 127, 184, 0.3);
+}
+
+.btn-secondary {
+  background-color: #e0f4ff;
+  color: #1f2937;
+  border: 2px solid #8b7fb8;
+}
+
+.btn-secondary:hover {
+  background-color: #c7e9ff;
+}
+
+/* Gradient background */
+.gradient-bg {
+  background: linear-gradient(135deg, #e0f4ff 0%, #f3e8ff 100%);
+}
+
+/* Input styles */
+input, textarea, select {
+  padding: 10px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #8b7fb8;
+  box-shadow: 0 0 0 3px rgba(139, 127, 184, 0.1);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
