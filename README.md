@@ -69,7 +69,7 @@ src/
 
 1. **Navigate to project directory**:
    ```bash
-   cd "c:\Users\Bansi\Downloads\VENKAT KRISHANA"
+   cd "c:\Users\ULLENDULA\Downloads\VENKAT KRISHANA"
    ```
 
 2. **Install dependencies**:
