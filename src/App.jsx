@@ -2,9 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 
+// Layouts
+import MainLayout from './layouts/MainLayout';
+import StudentLayout from './layouts/StudentLayout';
+import AdminLayout from './layouts/AdminLayout';
+
 // Components
-import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 // Pages
@@ -17,74 +20,115 @@ import { ResourcesPage } from './pages/ResourcesPage';
 import { BookSessionPage } from './pages/BookSessionPage';
 import { SupportGroupsPage } from './pages/SupportGroupsPage';
 import { ForumPage } from './pages/ForumPage';
-
 import './index.css';
 
-/**
- * App component - Main application structure with routing
- */
 function App() {
   return (
     <AuthProvider>
       <Router>
-        <div className="flex flex-col min-h-screen">
-          {/* Navigation */}
-          <Navbar />
+        <Routes>
+          {/* Public routes wrapped by main layout */}
+          <Route
+            path="/"
+            element={
+              <MainLayout>
+                <HomePage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <MainLayout>
+                <LoginPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <MainLayout>
+                <RegisterPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/resources"
+            element={
+              <MainLayout>
+                <ResourcesPage />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/forum"
+            element={
+              <MainLayout>
+                <ForumPage />
+              </MainLayout>
+            }
+          />
 
-          {/* Main Content */}
-          <main className="flex-grow">
-            <Routes>
-              {/* Public Routes */}
-              <Route path="/" element={<HomePage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="/resources" element={<ResourcesPage />} />
-              <Route path="/forum" element={<ForumPage />} />
+          {/* Student routes */}
+          <Route
+            path="/student/dashboard"
+            element={
+              <ProtectedRoute requiredRole="student">
+                <StudentLayout>
+                  <StudentDashboard />
+                </StudentLayout>
+              </ProtectedRoute>
+            }
+          />
 
-              {/* Protected Student Routes */}
-              <Route
-                path="/dashboard/student"
-                element={
-                  <ProtectedRoute requiredRole="student">
-                    <StudentDashboard />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/book-session"
-                element={
-                  <ProtectedRoute requiredRole="student">
-                    <BookSessionPage />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/support-groups"
-                element={
-                  <ProtectedRoute requiredRole="student">
-                    <SupportGroupsPage />
-                  </ProtectedRoute>
-                }
-              />
+          <Route
+            path="/book-session"
+            element={
+              <ProtectedRoute requiredRole="student">
+                <StudentLayout>
+                  <BookSessionPage />
+                </StudentLayout>
+              </ProtectedRoute>
+            }
+          />
 
-              {/* Protected Admin Routes */}
-              <Route
-                path="/dashboard/admin"
-                element={
-                  <ProtectedRoute requiredRole="admin">
-                    <AdminDashboard />
-                  </ProtectedRoute>
-                }
-              />
+          <Route
+            path="/appointments"
+            element={
+              <ProtectedRoute requiredRole="student">
+                <StudentLayout>
+                  <div>My Appointments (coming soon)</div>
+                </StudentLayout>
+              </ProtectedRoute>
+            }
+          />
 
-              {/* Catch-all Route */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </main>
+          <Route
+            path="/support-groups"
+            element={
+              <ProtectedRoute requiredRole="student">
+                <StudentLayout>
+                  <SupportGroupsPage />
+                </StudentLayout>
+              </ProtectedRoute>
+            }
+          />
 
-          {/* Footer */}
-          <Footer />
-        </div>
+          {/* Admin routes */}
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminLayout>
+                  <AdminDashboard />
+                </AdminLayout>
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Fallback */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </Router>
     </AuthProvider>
   );

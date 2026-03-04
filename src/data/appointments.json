@@ -1,0 +1,11 @@
+{
+  "appointments": [
+    {
+      "id": "ap1",
+      "studentEmail": "alice@student.edu",
+      "date": "2026-03-05",
+      "time": "10:00",
+      "notes": "Follow-up session"
+    }
+  ]
+}

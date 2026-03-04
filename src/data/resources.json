@@ -1,0 +1,33 @@
+{
+  "articles": [
+    {
+      "id": "a1",
+      "title": "Managing Exam Stress: A Student's Guide",
+      "summary": "Practical tips to manage stress around exams and deadlines.",
+      "category": "Article",
+      "author": "Wellness Team"
+    },
+    {
+      "id": "a2",
+      "title": "Sleep and Mental Health",
+      "summary": "How restful sleep supports emotional resilience.",
+      "category": "Article",
+      "author": "Campus Health"
+    }
+  ],
+  "videos": [
+    {
+      "id": "v1",
+      "title": "Intro to Mindfulness",
+      "url": "https://www.youtube.com/watch?v=example",
+      "duration": "8:12"
+    }
+  ],
+  "meditations": [
+    {
+      "id": "m1",
+      "title": "5-minute grounding",
+      "length": "5:00"
+    }
+  ]
+}

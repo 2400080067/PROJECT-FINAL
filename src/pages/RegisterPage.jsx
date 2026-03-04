@@ -77,20 +77,20 @@ export const RegisterPage = () => {
     setLoading(true);
 
     // Simulate API call
-    setTimeout(() => {
+        setTimeout(() => {
       try {
         register(formData.email, formData.password, formData.name, formData.role);
         navigate(
           formData.role === 'student'
-            ? '/dashboard/student'
-            : '/dashboard/admin'
+            ? '/student/dashboard'
+            : '/admin/dashboard'
         );
       } catch (error) {
         setErrors({ general: 'Registration failed. Please try again.' });
       } finally {
         setLoading(false);
       }
-    }, 500);
+    }, 600);
   };
 
   return (

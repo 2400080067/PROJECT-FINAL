@@ -41,10 +41,10 @@ export const HomePage = () => {
               <button
                 onClick={() =>
                   navigate(
-                    user?.role === 'student'
-                      ? '/dashboard/student'
-                      : '/dashboard/admin'
-                  )
+                      user?.role === 'student'
+                        ? '/student/dashboard'
+                        : '/admin/dashboard'
+                    )
                 }
                 className="btn btn-primary px-8 py-3"
               >
@@ -187,8 +187,8 @@ export const HomePage = () => {
               onClick={() =>
                 navigate(
                   user?.role === 'student'
-                    ? '/dashboard/student'
-                    : '/dashboard/admin'
+                    ? '/student/dashboard'
+                    : '/admin/dashboard'
                 )
               }
               className="btn btn-primary px-8 py-3"

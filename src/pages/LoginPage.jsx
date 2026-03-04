@@ -62,13 +62,13 @@ export const LoginPage = () => {
     setLoading(true);
 
     // Simulate API call
-    setTimeout(() => {
+        setTimeout(() => {
       try {
         login(formData.email, formData.password, formData.role);
         navigate(
           formData.role === 'student'
-            ? '/dashboard/student'
-            : '/dashboard/admin'
+            ? '/student/dashboard'
+            : '/admin/dashboard'
         );
       } catch (error) {
         setErrors({ general: 'Login failed. Please try again.' });

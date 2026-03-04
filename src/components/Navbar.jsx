@@ -41,7 +41,7 @@ export const Navbar = () => {
               <>
                 {user?.role === 'student' && (
                   <>
-                    <Link to="/dashboard/student" className="text-gray-700 hover:text-purple-600 transition">
+                    <Link to="/student/dashboard" className="text-gray-700 hover:text-purple-600 transition">
                       Dashboard
                     </Link>
                     <Link to="/book-session" className="text-gray-700 hover:text-purple-600 transition">
@@ -53,7 +53,7 @@ export const Navbar = () => {
                   </>
                 )}
                 {user?.role === 'admin' && (
-                  <Link to="/dashboard/admin" className="text-gray-700 hover:text-purple-600 transition">
+                  <Link to="/admin/dashboard" className="text-gray-700 hover:text-purple-600 transition">
                     Admin Panel
                   </Link>
                 )}
@@ -120,7 +120,7 @@ export const Navbar = () => {
                 {user?.role === 'student' && (
                   <>
                     <Link
-                      to="/dashboard/student"
+                      to="/student/dashboard"
                       className="block text-gray-700 hover:text-purple-600 transition"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -144,7 +144,7 @@ export const Navbar = () => {
                 )}
                 {user?.role === 'admin' && (
                   <Link
-                    to="/dashboard/admin"
+                    to="/admin/dashboard"
                     className="block text-gray-700 hover:text-purple-600 transition"
                     onClick={() => setMobileMenuOpen(false)}
                   >

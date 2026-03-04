@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": "p1",
+      "author": "alice@student.edu",
+      "title": "Coping with isolation",
+      "body": "Has anyone found ways to stay connected during remote semesters?",
+      "comments": [
+        { "id": "c1", "author": "bob@student.edu", "text": "Virtual study groups helped me a lot." }
+      ]
+    },
+    {
+      "id": "p2",
+      "author": "cara@student.edu",
+      "title": "Meditation tips",
+      "body": "I'm new to meditation and would love simple tips.",
+      "comments": []
+    }
+  ]
+}
